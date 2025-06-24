@@ -1,0 +1,230 @@
+<!-- <html>
+    <title>
+        Case Hearing Management
+    </title>
+    
+    <script>
+        function printError(elemId, hintMsg) {
+    document.getElementById(elemId).innerHTML = hintMsg;
+}
+        
+            function validateForm() {
+    // Retrieving the values of form elements 
+    let name = document.contactForm.name.value;
+    let email = document.contactForm.emai.value;
+    let pass = document.contactForm.passw.value;
+    let nameErr = emailErr = passErr =true;
+    if(name == "") {
+        printError("nameErr", "Please enter your gdhfdh");
+    } else {
+        let regex = /^[a-zA-Z\s]+$/;                
+        if(regex.test(name) === false) {
+            printError("nameErr", "Please enter a valid name");
+        } else {
+            printError("nameErr", "");
+            nameErr = false;
+        }
+    }
+
+    if(email == "") {
+        printError("emailErr", "Please enter your email address");
+    } else {
+        // Regular expression for basic email validation
+        let regex = /^\S+@\S+\.\S+$/;
+        if(regex.test(email) === false) {
+            printError("emailErr", "Please enter a valid email address");
+        } else{
+            printError("emailErr", "");
+            emailErr = false;
+        }
+    }
+    if(pass == "") {
+        printError("mobileErr", "Please enter your mobile number");
+    } else {
+        let regex = /^d{8}$/;
+        if(regex.test(pass) === false) {
+            printError("mobileErr", "Please enter a valid 10 digit mobile number");
+        } else{
+            printError("mobileErr", "");
+            passErr = false;
+        }
+    }
+    if((nameErr || emailErr || passErr) == true) {
+       return false;
+    }
+    else {
+        // Creating a string from input data for preview
+
+        // Display input data in a dialog box before submitting the form
+        alert("Hi");
+    }
+};
+    
+
+
+    </script>
+    
+    
+    <link rel="stylesheet" href="admincss.css">
+    <header>
+        <img src="C:\studies\CASE 2.0\emb.png" height="140px" width="130px">
+        <h3>E-Portal for Case Hearing Management</h3>
+        <br>
+        <h4>High Courts of India</h4>
+        <br>
+        <h4>District and Taluka Courts of India</h4>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="hc.html"> High Courts</a></li>
+            <li><a href="sc.html"> District Courts</a></li>
+            <li><a  href="cd.html">Case Details</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="hear.html"> E-Hearing</a></li>
+            <li><a href="cnt.html"> Contact</a></li>
+        </ul>
+    </header>
+    <body>
+        <div id="jus"><img src="C:\studies\CASE 2.0\jus.gif"></div>
+        <div id="box">
+            <h1>Admin Login</h1>
+            <form method="post" name="contactForm" action="home.html" onsubmit="validateForm()" >
+            
+            <label><b>Court-ID</b></label>
+            <input type="text" id="cid" name="name"><br>
+            <label><b>Email-Id</b></label>
+            <input type="email" id="mail" name="mai"> <br>
+            <label><b>Passkey</b></label>
+            <input type="password" id="pass" name="passw"> <br><br> 
+            <input type="submit" id="sub">    
+            </form>
+            <a href="help.html"><h3>Help !</h3></a>
+        </div>
+
+    </body>
+</html> -->
+
+
+<html>
+<head>
+    <title>Case Hearing Management</title>
+    <link rel="stylesheet" href="admincss.css">
+    <script>
+        function printError(elemId, hintMsg) {
+            document.getElementById(elemId).innerHTML = hintMsg;
+        }
+        
+        function validateForm() {
+            // Retrieving the values of form elements 
+            let name = document.contactForm.name.value;
+            let email = document.contactForm.mail.value;
+            let pass = document.contactForm.pass.value;
+            let nameErr = emailErr = passErr = false;
+
+            if(name == "") {
+                printError("nameErr", "Please enter your name");
+                nameErr = true;
+            } else {
+                let regex = /^[a-zA-Z\s]+$/;                
+                if(regex.test(name) === false) {
+                    printError("nameErr", "Please enter a valid name");
+                    nameErr = true;
+                } else {
+                    printError("nameErr", "");
+                }
+            }
+
+            if(email == "") {
+                printError("emailErr", "Please enter your email address");
+                emailErr = true;
+            } else {
+                // Regular expression for basic email validation
+                let regex = /^\S+@\S+\.\S+$/;
+                if(regex.test(email) === false) {
+                    printError("emailErr", "Please enter a valid email address");
+                    emailErr = true;
+                } else{
+                    printError("emailErr", "");
+                }
+            }
+
+            if(pass == "") {
+                printError("passErr", "Please enter your passkey");
+                passErr = true;
+            } else {
+                let regex = /^\d{8}$/;
+                if(regex.test(pass) === false) {
+                    printError("passErr", "Please enter a valid 8 digit passkey");
+                    passErr = true;
+                } else{
+                    printError("passErr", "");
+                }
+            }
+
+            if(nameErr || emailErr || passErr) {
+                return false;
+            } else {
+                // Display input data in a dialog box before submitting the form
+                alert("Form submitted successfully");
+                return true;
+            }
+        }
+    </script>
+</head>
+<header>
+    <img src="C:\studies\CASE 2.0\emb.png" height="140px" width="130px">
+    <h3>E-Portal for Case Hearing Management</h3>
+    <br>
+    <h4>High Courts of India</h4>
+    <br>
+    <h4>District and Taluka Courts of India</h4>
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="hc.html"> High Courts</a></li>
+        <li><a href="sc.html"> District Courts</a></li>
+        <li><a  href="cd.html">Case Details</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="hear.html"> E-Hearing</a></li>
+        <li><a href="cnt.html"> Contact</a></li>
+    </ul>
+</header>
+
+
+            <body>
+                <header>
+        <img src="C:\studies\CASE 2.0\emb.png" height="140px" width="130px">
+        <h3>E-Portal for Case Hearing Management</h3>
+        <br>
+        <h4>High Courts of India</h4>
+        <br>
+        <h4>District and Taluka Courts of India</h4>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="hc.html"> High Courts</a></li>
+            <li><a href="sc.html"> District Courts</a></li>
+            <li><a  href="cd.html">Case Details</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="hear.html"> E-Hearing</a></li>
+            <li><a href="cnt.html"> Contact</a></li>
+        </ul>
+    </header>
+                <div id="jus"><img src="C:\studies\CASE 2.0\jus.gif"></div>
+                <div id="box">
+                    <h1>Admin Login</h1>
+                    <form method="post" name="contactForm" action="home.html" onsubmit="return validateForm()" >
+                    
+                    <label><b>Court-ID</b></label>
+                    <input type="text" id="cid" name="name"><br>
+                    <span id="nameErr"></span>
+                    <label><b>Email-Id</b></label>
+                    <input type="email" id="mail" name="mai"> <br>
+                    <span id="emailErr"></span>
+                    <label><b>Passkey</b></label>
+                    <input type="password" id="pass" name="passw"> <br>
+                    <span id="passErr"></span><br>
+                    <input type="submit" id="sub">    
+                    </form>
+                    <a href="help.html"><h3>Help !</h3></a>
+                </div>
+
+</body>
+</html>
